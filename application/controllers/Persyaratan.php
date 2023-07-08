@@ -24,7 +24,7 @@ class Persyaratan extends CI_Controller
     {
         if (isset($_POST['create'])) {
             $this->PersyaratanModel->insert_persyaratan();
-            redirect('Persyaratan');
+            redirect('persyaratan');
         } else {
             $data['title'] = "Tambah Data Persyaratan Beasiswa | SIMDAWA-APP";
             $this->load->view('template/header', $data);
@@ -44,7 +44,7 @@ class Persyaratan extends CI_Controller
             $data['persyaratan'] = $this->PersyaratanModel->get_persyaratan_byid($id);
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
-            $this->load->view('persyaratan/jenis_update', $data);
+            $this->load->view('persyaratan/persyaratan_update', $data);
             $this->load->view('template/footer');
         }
     }
@@ -52,8 +52,8 @@ class Persyaratan extends CI_Controller
     public function hapus($id)
     {
         if (isset($id)) {
-            $this->PersyaratanModel->delete_jenis($id);
-            redirect('jenis');
+            $this->PersyaratanModel->delete_persyaratan($id);
+            redirect('persyaratan');
         }
     }
 }

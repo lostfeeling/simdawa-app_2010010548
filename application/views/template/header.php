@@ -38,7 +38,7 @@
                                         John Abraham</h5>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
-                                <a class="dropdown-item" href="<?= base_url('login/logout') ?>"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="<?php echo base_url('login/logout') ?>"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
