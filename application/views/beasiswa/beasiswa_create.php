@@ -45,7 +45,8 @@
                             <div class="form-group row">
                                 <label for="keterangan" class="col-md-2">Nama Jenis Beasiswa</label>
                                 <div class="col-md-10">
-                                    <select name="jenis_id" required class="form-control">
+                                    <select name="jenis_id" required class="form-control
+                                    select2">
                                         <option value="">Pilih Jenis Beasiswa</option>
                                         <?php
                                         foreach ($jenis as $a) {

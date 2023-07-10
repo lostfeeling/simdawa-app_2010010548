@@ -23,8 +23,7 @@
                 ?>
                 <div class="card">
                     <div class="card-header">
-                        <a href="<?= base_url('jenis/tambah') ?>" class="btn btn-sm btn-success float-right">
-                            <i class="fas fa-plus">Tambah Data</i></a>
+                        <a href="<?= base_url('jenis/tambah') ?>" class="btn btn-sm btn-success float-right"><i class="fas fa-plus">Tambah Data</i></a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered" id="mytabel">
@@ -45,8 +44,8 @@
                                         <td><?= $a->nama_jenis ?></td>
                                         <td><?= $a->keterangan ?></td>
                                         <td>
-                                            <a href="<?= base_url('jenis/ubah/' . $a->id) ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Ubah</a>
-                                            <a href="<?= base_url('jenis/hapus/' . $a->id) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Ingin hapus data ini?')"><i class="fas fa-trash"></i> Hapus</a>
+                                            <a href="<?= base_url('jenis/ubah/' . $a->id) ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"> Ubah</i></a>
+                                            <a href="<?= base_url('jenis/hapus/' . $a->id) ?> " class="btn btn-sm btn-danger" onclick="return confirm('Ingin hapus data ini?')"><i class="fas fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
                                 <?php

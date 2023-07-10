@@ -5,13 +5,14 @@ class BeasiswaModel extends CI_Model
 {
 
     private $tabel = "beasiswa";
+
     public function get_beasiswa()
     {
-        $q = "select beasiswa.*, jenis_beasiswa.nama_jenis, jenis_beasiswa.keterangan from beasiswa
-    inner join jenis_beasiswa on beasiswa.jenis_id = jenis_beasiswa.id";
+
+        $q = "select beasiswa. *, jenis_beasiswa.nama_jenis, jenis_beasiswa.keterangan from beasiswa
+        inner join jenis_beasiswa on beasiswa.jenis_id = jenis_beasiswa.id";
         return $this->db->query($q)->result();
     }
-
     public function insert_beasiswa()
     {
         $data = [
@@ -20,6 +21,7 @@ class BeasiswaModel extends CI_Model
             'tanggal_selesai' => $this->input->post('tanggal_selesai'),
             'jenis_id' => $this->input->post('jenis_id')
         ];
+
         $this->db->insert($this->tabel, $data);
         if ($this->db->affected_rows() > 0) {
             $this->session->set_flashdata('pesan', "Data beasiswa berhasil ditambahkan!");
@@ -41,15 +43,15 @@ class BeasiswaModel extends CI_Model
             'nama_beasiswa' => $this->input->post('nama_beasiswa'),
             'tanggal_mulai' => $this->input->post('tanggal_mulai'),
             'tanggal_selesai' => $this->input->post('tanggal_selesai'),
-            'jenis_id' => $this->input->post('jenis_id')
+            'jenis_id' => $this->input->post('jenis_id'),
         ];
         $this->db->where('id', $this->input->post('id'));
         $this->db->update($this->tabel, $data);
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('pesan', "Data beasiswa berhasil di ubah!");
+            $this->session->set_flashdata('pesan', "Data beasiswa berhasil diubah!");
             $this->session->set_flashdata('status', true);
         } else {
-            $this->session->set_flashdata('pesan', "Data beasiswa gagal di ubah!");
+            $this->session->set_flashdata('pesan', "Data beasiswa gagal diubah!");
             $this->session->set_flashdata('status', false);
         }
     }
@@ -59,10 +61,10 @@ class BeasiswaModel extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete($this->tabel);
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('pesan', "Data beasiswa berhasil di hapus!");
+            $this->session->set_flashdata('pesan', "Data beasiswa berhasil dihapus!");
             $this->session->set_flashdata('status', true);
         } else {
-            $this->session->set_flashdata('pesan', "Data beasiswa gagal di hapus!");
+            $this->session->set_flashdata('pesan', "Data beasiswa gagal dihapus!");
             $this->session->set_flashdata('status', false);
         }
     }

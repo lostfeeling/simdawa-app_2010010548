@@ -24,17 +24,17 @@
                     </div>
                     <div class="card-body">
                         <form action="" method="post">
+                            <input type="hidden" name="id" value="<?= $jenis->id ?>">
                             <div class="form-group row">
-                                <input type="hidden" name="id" value="<?= $jenis->id ?>">
-                                <label for="nama_jenis" class="col-md-2">Nama Jenis Beasiswa</label>
+                                <label for="" class="col-md-2">Nama Jenis Beasiswa</label>
                                 <div class="col-md-10">
-                                    <input type="text" name="nama_jenis" required placeholder="Nama Jenis Beasiswa" value="<?= $jenis->nama_jenis ?>" class="form-control">
+                                    <input type="text" name="nama_jenis" value="<?= $jenis->nama_jenis ?>" required placeholder="Nama Jenis Beasiswa" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="keterangan" class="col-md-2">Keterangan</label>
                                 <div class="col-md-10">
-                                    <input type="text" name="keterangan" required placeholder="Keterangan" value="<?= $jenis->keterangan ?>" class="form-control">
+                                    <input type="text" name="keterangan" value="<?= $jenis->keterangan ?>" required placeholder="Keterangan" class="form-control">
                                 </div>
                             </div>
                             <a href="<?= base_url('jenis') ?>" class="btn btn-sm btn-danger float-right">Batal</a>

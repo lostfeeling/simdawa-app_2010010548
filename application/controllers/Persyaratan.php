@@ -9,7 +9,6 @@ class Persyaratan extends CI_Controller
         parent::__construct();
         $this->load->model('PersyaratanModel');
     }
-
     public function index()
     {
         $data['title'] = "Dashboard | SIMDAWA-APP";
@@ -40,7 +39,7 @@ class Persyaratan extends CI_Controller
             $this->PersyaratanModel->update_persyaratan();
             redirect('persyaratan');
         } else {
-            $data['title'] = "Perbaharui Data Persyaratan Beasiswa | SIMDAWA-APP";
+            $data['title'] = "Perbaharui Data Jenis Beasiswa | SIMDAWA-APP";
             $data['persyaratan'] = $this->PersyaratanModel->get_persyaratan_byid($id);
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');

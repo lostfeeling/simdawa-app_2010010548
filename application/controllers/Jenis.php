@@ -9,7 +9,6 @@ class Jenis extends CI_Controller
         parent::__construct();
         $this->load->model('JenisModel');
     }
-
     public function index()
     {
         $data['title'] = "Dashboard | SIMDAWA-APP";
@@ -24,7 +23,7 @@ class Jenis extends CI_Controller
     {
         if (isset($_POST['create'])) {
             $this->JenisModel->insert_jenis();
-            redirect('Jenis');
+            redirect('jenis');
         } else {
             $data['title'] = "Tambah Data Jenis Beasiswa | SIMDAWA-APP";
             $this->load->view('template/header', $data);

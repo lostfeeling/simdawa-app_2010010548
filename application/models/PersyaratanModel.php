@@ -5,12 +5,12 @@ class PersyaratanModel extends CI_Model
 {
 
     private $tabel = "persyaratan";
+
     public function get_persyaratan()
     {
+
         return $this->db->get($this->tabel)->result();
     }
-
-
     public function insert_persyaratan()
     {
         $data = [
@@ -41,10 +41,10 @@ class PersyaratanModel extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update($this->tabel, $data);
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('pesan', "Data Persyaratan berhasil di ubah!");
+            $this->session->set_flashdata('pesan', "Data Persyaratan berhasil diubah!");
             $this->session->set_flashdata('status', true);
         } else {
-            $this->session->set_flashdata('pesan', "Data Prodi gagal diubah!");
+            $this->session->set_flashdata('pesan', "Data Persyaratan gagal diubah!");
             $this->session->set_flashdata('status', false);
         }
     }
@@ -54,10 +54,10 @@ class PersyaratanModel extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete($this->tabel);
         if ($this->db->affected_rows() > 0) {
-            $this->session->set_flashdata('pesan', "Data Persyaratan berhasil di hapus!");
+            $this->session->set_flashdata('pesan', "Data Persyaratan berhasil dihapus!");
             $this->session->set_flashdata('status', true);
         } else {
-            $this->session->set_flashdata('pesan', "Data Persyaratan gagal di hapus!");
+            $this->session->set_flashdata('pesan', "Data Persyaratan gagal dihapus!");
             $this->session->set_flashdata('status', false);
         }
     }

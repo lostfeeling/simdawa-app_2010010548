@@ -8,9 +8,13 @@ class Prodi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('ProdiModel');
-        $this->load->library("pdf");
+        $this->load->library('pdf');
     }
-
+    public function cetak()
+    {
+        $data['prodi'] = $this->ProdiModel->get_prodi();
+        $this->load->view('prodi/prodi_print', $data);
+    }
     public function index()
     {
         $data['title'] = "Dashboard | SIMDAWA-APP";
@@ -25,9 +29,9 @@ class Prodi extends CI_Controller
     {
         if (isset($_POST['create'])) {
             $this->ProdiModel->insert_prodi();
-            redirect('Prodi');
+            redirect('prodi');
         } else {
-            $data['title'] = "Tambah Data Prodi Beasiswa | SIMDAWA-APP";
+            $data['title'] = "Tambah Data Prodi | SIMDAWA-APP";
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
             $this->load->view('prodi/prodi_create');
@@ -56,11 +60,5 @@ class Prodi extends CI_Controller
             $this->ProdiModel->delete_prodi($id);
             redirect('prodi');
         }
-    }
-
-    public function cetak()
-    {
-        $data['prodi'] = $this->ProdiModel->get_prodi();
-        $this->load->view('prodi/prodi_print', $data);
     }
 }

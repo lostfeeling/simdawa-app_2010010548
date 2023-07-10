@@ -8,7 +8,12 @@ class Beasiswa extends CI_Controller
     {
         parent::__construct();
         $this->load->model(array('JenisModel', 'BeasiswaModel'));
-        $this->load->library("pdf");
+        $this->load->library('pdf');
+    }
+    public function cetak()
+    {
+        $data['beasiswa'] = $this->BeasiswaModel->get_beasiswa();
+        $this->load->view('beasiswa/beasiswa_print', $data);
     }
 
     public function index()
@@ -27,7 +32,7 @@ class Beasiswa extends CI_Controller
             $this->BeasiswaModel->insert_beasiswa();
             redirect('beasiswa');
         } else {
-            $data['title'] = "Tambah Data Beasiswa Beasiswa | SIMDAWA-APP";
+            $data['title'] = "Tambah Data Beasiswa | SIMDAWA-APP";
             $data['jenis'] = $this->JenisModel->get_jenis();
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
@@ -43,7 +48,7 @@ class Beasiswa extends CI_Controller
             redirect('beasiswa');
         } else {
             $data['jenis'] = $this->JenisModel->get_jenis();
-            $data['title'] = "Perbaharui Data Beasiswa Beasiswa | SIMDAWA-APP";
+            $data['title'] = "Perbaharui Data Beasiswa | SIMDAWA-APP";
             $data['beasiswa'] = $this->BeasiswaModel->get_beasiswa_byid($id);
             $this->load->view('template/header', $data);
             $this->load->view('template/sidebar');
@@ -58,11 +63,5 @@ class Beasiswa extends CI_Controller
             $this->BeasiswaModel->delete_beasiswa($id);
             redirect('beasiswa');
         }
-    }
-
-    public function cetak()
-    {
-        $data['beasiswa'] = $this->BeasiswaModel->get_beasiswa();
-        $this->load->view('beasiswa/beasiswa_print', $data);
     }
 }
