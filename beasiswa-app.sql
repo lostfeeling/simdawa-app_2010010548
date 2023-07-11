@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2023 at 12:47 PM
+-- Generation Time: Jul 11, 2023 at 12:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -137,7 +137,9 @@ CREATE TABLE `persyaratan` (
 --
 
 INSERT INTO `persyaratan` (`id`, `nama_persyaratan`, `keterangan`) VALUES
-(1, 'SKCK', 'fotocopy skck.');
+(1, 'SKCK', 'fotocopy skck.'),
+(3, 'IPK ', 'IPK diatas 3'),
+(4, 'Keterbatasan biaya', 'Hanya untuk mahasiswa kurang mampu');
 
 -- --------------------------------------------------------
 
@@ -275,7 +277,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `persyaratan`
 --
 ALTER TABLE `persyaratan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `persyaratan_beasiswa`
