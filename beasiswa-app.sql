@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2023 at 12:54 PM
+-- Generation Time: Jul 11, 2023 at 01:01 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -185,7 +185,7 @@ CREATE TABLE `prodi` (
 --
 
 INSERT INTO `prodi` (`id`, `nama_prodi`, `keterangan`) VALUES
-(3, 'Teknik Sipil', 'Prodi Teknik Sipil Uniska');
+(3, 'Teknik Informatika', 'Prodi Teknik Sipil Uniska');
 
 --
 -- Indexes for dumped tables
