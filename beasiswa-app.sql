@@ -185,7 +185,7 @@ CREATE TABLE `prodi` (
 --
 
 INSERT INTO `prodi` (`id`, `nama_prodi`, `keterangan`) VALUES
-(3, 'Teknik Informatika', 'Prodi Teknik Sipil Uniska');
+(3, 'Teknik Informatika', 'Prodi Teknik Informatika Uniska');
 
 --
 -- Indexes for dumped tables
